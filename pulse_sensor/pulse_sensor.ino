@@ -59,4 +59,11 @@ void loop() {
   if (pulse_signal < lower_threshold) {
   any_peak_detected = false;
   }
+
+  counter++;
+  if (counter > 200){
+    ArduinoCloud.update();
+    Serial.println(BPM);
+    counter = 0;
+  }
 }
