@@ -1,7 +1,7 @@
 #include "thingProperties.h"
 const int sensor_pin = 0;
 int pulse_signal = 0;
-//float BPM = 0;
+float BPM = 0;
 int counter = 0;
 
 bool ignore = false;
