@@ -5,7 +5,6 @@ int pulse_signal = 0;
 int counter = 0;
 
 bool ignore = false;
-bool first_pulse_detected = false;
 bool any_peak_detected = false;
 bool first_peak_detected = false;
 unsigned long first_pulse_time = 0;
