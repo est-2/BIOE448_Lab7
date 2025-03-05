@@ -1,7 +1,11 @@
+#include "thingProperties.h"
 const int sensor_pin = 0;
 int pulse_signal = 0;
-float BPM = 0;
+//float BPM = 0;
+int counter = 0;
 
+bool ignore = false;
+bool first_pulse_detected = false;
 bool any_peak_detected = false;
 bool first_peak_detected = false;
 unsigned long first_pulse_time = 0;
@@ -15,6 +19,17 @@ int pulse_period = 0;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
+  delay(1500);
+  initProperties();
+
+  ArduinoCloud.begin(ArduinoIoTPreferredConnection);
+  setDebugMessageLevel(2);
+  ArduinoCloud.printDebugInfo();
+
+  while (ArduinoCloud.connected() != 1) {
+    ArduinoCloud.update();
+    delay(500);
+  }
 }
 
 void loop() {
