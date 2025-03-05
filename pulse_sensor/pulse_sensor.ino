@@ -7,8 +7,8 @@ bool first_peak_detected = false;
 unsigned long first_pulse_time = 0;
 unsigned long second_pulse_time = 0;
 
-int upper_threshold = 1000;
-int lower_threshold = 5;
+int upper_threshold = 950;
+int lower_threshold = 720;
 
 int pulse_period = 0;
 
